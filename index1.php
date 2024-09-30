@@ -27,38 +27,41 @@ if (!isset($_SESSION['user_id'])) {
     <div id="reader" width="600px" height="600px"></div>
 
     <script>
-        function onScanSuccess(decodedText, decodedResult) {
-            // handle the scanned code as you like, for example:
-          
-            isRedirecting = true;
-            window.location.href = decodedText;
-            html5Qrcode.stop().then((ignore) => {
-                // QR Code scanning is stopped.
+    let isRedirecting = false; // Declarar la bandera fuera de la función
+
+    function onScanSuccess(decodedText, decodedResult) {
+        if (!isRedirecting) { // Verificar si no se ha redirigido ya
+            isRedirecting = true; // Marcar como redirigiendo
+
+            // Detener el escáner
+            html5QrcodeScanner.clear().then(() => {
+                // Redirigir a la URL escaneada
+                window.location.href = decodedText;
             }).catch((err) => {
-                // Stop failed, handle it.
+                console.error('Error al detener el escáner:', err);
             });
         }
+    }
 
-        function onScanFailure(error) {
-            // handle scan failure, usually better to ignore and keep scanning.
-            // for example:
-            console.warn(`Code scan error = ${error}`);
-        }
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", {
-                fps: 10,
-                qrbox: {
-                    width: 500,
-                    height: 500
-                },
-                // Especificar la cámara trasera
-                rememberLastUsedCamera: false,
-                preferredCamera: "environment" // Usar la cámara trasera
+    function onScanFailure(error) {
+        console.warn(`Código de escaneo error = ${error}`);
+    }
+
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", {
+            fps: 10,
+            qrbox: {
+                width: 500,
+                height: 500
             },
-            /* verbose= */
-            true);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    </script>
+            rememberLastUsedCamera: false,
+            preferredCamera: "environment"
+        },
+        true
+    );
+
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+</script>
 </body>
 
 </html>
