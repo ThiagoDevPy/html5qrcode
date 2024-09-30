@@ -56,7 +56,7 @@ function login() {
                 console.log(xhr.responseText);
                var response = JSON.parse(xhr.responseText);
                 if (response.success) {
-                    window.location.href = 'index.php'; // Redirigir al dashboard
+                    window.location.href = 'index1.php'; // Redirigir al dashboard
                 } else {
                     alert("Datos Incorrectos");
                 }

@@ -1,37 +1,62 @@
+<?php
+ob_start();
+session_start();
+require 'conexion.php';
+require 'phpqrcode/qrlib.php';
+
+if (!isset($_SESSION['user_id'])) {
+    // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+    header('Location: login.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
+    exit(); // Asegúrate de salir del script después de redirigir
+}
+?>
+
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escanear QR</title>
-    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <title>Document</title>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
 </head>
+
 <body>
-    <div id="reader" style="width: 600px;"></div>
+    <div id="reader" width="600px" height="600px"></div>
+
     <script>
         function onScanSuccess(decodedText, decodedResult) {
-            // Maneja el texto escaneado aquí
-            console.log(`Código QR detectado: ${decodedText}`);
+            // handle the scanned code as you like, for example:
+            window.location.href = decodedText;
         }
 
-        function onScanError(errorMessage) {
-            // Maneja el error aquí
-            console.warn(`Error de escaneo: ${errorMessage}`);
+        function onScanFailure(error) {
+            // handle scan failure, usually better to ignore and keep scanning.
+            // for example:
+            console.warn(`Code scan error = ${error}`);
         }
-
-        const html5QrCode = new Html5Qrcode("reader");
-        html5QrCode.start(
-            { facingMode: "environment" }, // Usa la cámara trasera
-            {
-                fps: 10, // Cuadros por segundo
-                qrbox: 250 // Tamaño del área de escaneo
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", {
+                fps: 10,
+                qrbox: {
+                    width: 500,
+                    height: 500
+                },
+                // Especificar la cámara trasera
+                rememberLastUsedCamera: false,
+                preferredCamera: "environment" // Usar la cámara trasera
             },
-            onScanSuccess,
-            onScanError)
-        .catch(err => {
-            // Maneja el error al iniciar la cámara
-            console.error(`No se pudo iniciar: ${err}`);
-        });
+            /* verbose= */
+            true);
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
 </body>
+
 </html>
+
+
+<?php
+ob_end_flush();
+?>
