@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="card-body text-center">
                                     <p class="lead">La asistencia ha sido guardada exitosamente.</p>
-                                    <a href="index1.php" class="btn btn-primary">Volver al Inicio</a>
+                                    <a href="index3.php" class="btn btn-primary">Volver al Inicio</a>
                                 </div>
                             </div>
                         </div>
