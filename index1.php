@@ -29,8 +29,14 @@ if (!isset($_SESSION['user_id'])) {
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
+          
             isRedirecting = true;
             window.location.href = decodedText;
+            html5Qrcode.stop().then((ignore) => {
+                // QR Code scanning is stopped.
+            }).catch((err) => {
+                // Stop failed, handle it.
+            });
         }
 
         function onScanFailure(error) {
