@@ -11,185 +11,167 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Asistencia</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit-no" name="viewport">
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-    <!-- Tell the browser to be responsive to screen width -->
-
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Font Awesome -->
-
-    <link rel="stylesheet" href="css/font-awesome.css">
-
-    <link rel="stylesheet" href="css/AdminLTE.min.css">
-
-    <link rel="stylesheet" href="css/blue.css">
-
-
-    <link rel="stylesheet" href="css/_all-skins.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login Sistema Ventas</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/schmich/instascan-builds@master/instascan.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
+
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Color de fondo del body */
+            height: 100%;
+        }
+
+        .bg-header {
+            background-color: #007bff;
+            /* Color azul para el header */
+        }
+
+        .bg-footer {
+            background-color: #007bff;
+           
+            /* Color azul para el footer */
+            color: white;
+            /* Color del texto en el footer */
+        }
+
+      
+        .cont {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+            height: 60vh;
+            /* Opcional: ajusta la altura del contenedor */
+        }
+       
+
+
+        /* Estilo para el lector QR */
+        #reader {
+            width: 100%; /* Ancho completo */
+            height: auto; /* Altura automática para mantener la relación */
+            max-width: 600px; /* Ancho máximo */
+            margin: 0 auto; /* Centrar */
+            border: 2px solid #ccc; /* Ejemplo de borde */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Ocultar desbordamiento */
+            
+        }
+
+        footer{
+            bottom: 0;
+        }
+    
+    </style>
 </head>
 
-
-<style>
-    #canvas {
-        width: 300px;
-        /* Ajusta el ancho según lo que necesites */
-        /* Ajusta la altura según lo que necesites */
-        height: 300px;
-        margin: auto;
-        border: 2px solid #007bff;
-        /* Borde para destacar el área */
-        border-radius: 8px;
-    }
-
-    .main-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-    html,
-    body {
-        height: 100%;
-        /* Asegura que el html y el body ocupen toda la altura */
-        margin: 0;
-        /* Elimina el margen por defecto */
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        /* Coloca los elementos en columna */
-    }
+<body>
+    <header class="bg-header py-4">
+        <div class="container">
+            <h1 class="text-center text-white"><img src="img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
+        </div>
+    </header>
 
 
-    main {
-        flex: 1;
-        /* Permite que el main ocupe todo el espacio disponible */
-    }
+            <main>
+                <div >
+                    <div>
 
-
-    .bg-header {
-        background-color: #007bff;
-        /* Color azul para el header */
-    }
-
-    .bg-footer {
-        background-color: #0056b3;
-        /* Color azul para el footer */
-        color: white;
-        /* Color del texto en el footer */
-    }
-
-    footer {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 1rem;
-
-    }
-</style>
-
-<main>
-
-    <body>
-        <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-
-                    </div>
-
-                </div>
-
-            </nav>
-        </header>
-
-
-        <div class="container text-center">
-            <h2 class="mt-4">Registro de asistencia</h2>
-            <div class="card mt-4">
-                <div class="card-body">
-
-
-                    <div id="camara">
-                        <div class="col-lg-12 col-md-12 col-xs-12">
-                            <div id="cuadro">
-                                <canvas id="canvas" class="border border-primary"></canvas>
+                    <div class="cont">
+                        <div id="camara">
+                            <div>
+                                <div id="cuadro">
+                                <div id="reader" width="600px"></div>
+                                </div>
                             </div>
+                        </div>
                         </div>
                     </div>
 
-
                 </div>
-            <div class="container text-center">
-            <button type="button" id="btnIngreso" onclick="iniciaCamara()" class="btn btn-success">Iniciar camara</button>
-
-            <button type="button" id="btnIngreso" onclick="apagaCamara()" class="btn btn-warning">Apagar camara</button>
-            </div>
-        </div>
-        </div>
+            </main>
+  
 
 
 
-      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="scripts/asistencia.js" ?<?php echo time(); ?>></script>
+    <script>
+    let isRedirecting = false; // Declarar la bandera fuera de la función
 
+    function onScanSuccess(decodedText, decodedResult) {
+        if (!isRedirecting) { // Verificar si no se ha redirigido ya
+            isRedirecting = true; // Marcar como redirigiendo
 
-</main>
-<footer class="bg-footer py-4 mt-auto">
-    <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
-        <h5>Contáctanos</h5>
-        <ul class="list-unstyled">
-            <li class="mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                </svg> Avda. España 676 casi Boquerón
-            </li>
-            <li class="mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                </svg> Tel: (595-21) 229-450
-            </li>
-            <li class="mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                </svg> Tel: +595 983-225-523
-            </li>
-            <li class="mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                </svg> E-mail: info@uninorte.edu.py
-            </li>
-        </ul>
-    </div>
-</footer>
+            // Detener el escáner
+            html5QrcodeScanner.clear().then(() => {
+                // Redirigir a la URL escaneada
+                window.location.href = decodedText;
+            }).catch((err) => {
+                console.error('Error al detener el escáner:', err);
+            });
+        }
+    }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="js/scripts.js"></script>
+    function onScanFailure(error) {
+        console.warn(`Código de escaneo error = ${error}`);
+    }
 
-<script src=""></script>
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootbox.min.js"></script>
-<script type="text/javascript" src="scripts/asistencia.js" ?<?php echo time(); ?>></script>
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", {
+            fps: 20,
+            qrbox: {
+                width: 250,
+                height: 250
+            }
+        },
+        true
+    );
 
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+       // Renderizar el escáner
+       const observer = new MutationObserver(() => {
+            const button = document.getElementById('start-scanning-button');
+            const comboBox = document.getElementById('camera-selection');
+
+            if (button && comboBox) {
+                button.textContent = 'Start sdaasdasd'; // Cambiar texto del botón
+                const label = comboBox.querySelector('label');
+                if (label) {
+                    label.textContent = 'Select sadada'; // Cambiar texto del combo box
+                }
+                observer.disconnect(); // Dejar de observar una vez que se hayan encontrado los elementos
+            }
+        });
+
+        // Iniciar la observación del DOM
+        observer.observe(document.body, { childList: true, subtree: true }); 
+</script>
 </body>
 
 
+
 </html>
+
 
 <?php
 ob_end_flush();

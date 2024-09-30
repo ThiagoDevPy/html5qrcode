@@ -27,11 +27,11 @@ if (!isset($_SESSION['user_id'])) {
     <div id="reader" width="600px" height="600px"></div>
 
     <script>
-    let isRedirecting = false;
+    let isRedirecting = false; // Declarar la bandera fuera de la función
 
     function onScanSuccess(decodedText, decodedResult) {
-        if (!isRedirecting) {
-            isRedirecting = true;
+        if (!isRedirecting) { // Verificar si no se ha redirigido ya
+            isRedirecting = true; // Marcar como redirigiendo
 
             // Detener el escáner
             html5QrcodeScanner.clear().then(() => {
@@ -55,18 +55,12 @@ if (!isset($_SESSION['user_id'])) {
                 height: 500
             },
             rememberLastUsedCamera: false,
-            preferredCamera: "environment" // Usar la cámara trasera
+            preferredCamera: "environment"
         },
         true
     );
 
-    // Iniciar el escáner usando solo la cámara trasera
-    html5QrcodeScanner.render(onScanSuccess, onScanFailure).then(() => {
-        // Forzar la selección de la cámara trasera (environment)
-        html5QrcodeScanner.setCamera('environment');
-    }).catch(err => {
-        console.error('Error al iniciar el escáner:', err);
-    });
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 </script>
 </body>
 
