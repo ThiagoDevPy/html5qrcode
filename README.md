@@ -1,0 +1,2 @@
+# qrprueba
+# html5qrcode
