@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_id'])) {
             /* Color del texto blanco */
             border: none;
             /* Sin borde */
-            padding: 10px 20px;
+            padding: 8px 20px;
             /* Espaciado interno */
             border-radius: 5px;
             /* Bordes redondeados */
@@ -108,7 +108,7 @@ if (!isset($_SESSION['user_id'])) {
             /* Borde gris claro */
             border-radius: 5px;
             /* Bordes redondeados */
-            padding: 5px;
+            padding: 10px;
             /* Espaciado interno */
             
             /* Ancho completo */
