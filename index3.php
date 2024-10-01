@@ -53,7 +53,28 @@ if (!isset($_SESSION['user_id'])) {
             bottom: 0;
         }
 
-
+        #html5-qrcode-button-camera-permission{
+            background-color: #28a745;
+            /* Color de fondo verde */
+            color: white;
+            /* Color del texto blanco */
+            border: none;
+            /* Sin borde */
+            padding: 10px 20px;
+            /* Espaciado interno */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Cursor tipo puntero */
+            transition: background-color 0.3s;
+            /* Transición suave */
+            margin-top: 15px;
+            /* Añadir separación superior */
+        }
+        #html5-qrcode-button-camera-permission:hover {
+            background-color: #218838;
+            /* Color de fondo al pasar el mouse */
+        }
 
         /* Estilo para el botón de encender cámara */
         #html5-qrcode-button-camera-start {
@@ -75,6 +96,7 @@ if (!isset($_SESSION['user_id'])) {
             /* Añadir separación superior */
         }
 
+       
         #html5-qrcode-button-camera-start:hover {
             background-color: #218838;
             /* Color de fondo al pasar el mouse */
