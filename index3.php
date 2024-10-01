@@ -12,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,10 +21,9 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login Sistema Ventas</title>
+    <title>Asistencia</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/schmich/instascan-builds@master/instascan.min.js"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
 
@@ -51,32 +49,78 @@ if (!isset($_SESSION['user_id'])) {
         }
 
 
-    
-
-
-
-        /* Estilo para el lector QR */
-        #reader {
-            width: 100%;
-            /* Ancho completo */
-            height: auto;
-            /* Altura automática para mantener la relación */
-            max-width: 600px;
-            /* Ancho máximo */
-            margin: 0 auto;
-            /* Centrar */
-            border: 2px solid #ccc;
-            /* Ejemplo de borde */
-            border-radius: 10px;
-            /* Bordes redondeados */
-            overflow: hidden;
-            /* Ocultar desbordamiento */
-
-        }
-
         footer {
             bottom: 0;
         }
+
+
+
+        /* Estilo para el botón de encender cámara */
+        #html5-qrcode-button-camera-start {
+            background-color: #28a745;
+            /* Color de fondo verde */
+            color: white;
+            /* Color del texto blanco */
+            border: none;
+            /* Sin borde */
+            padding: 10px 20px;
+            /* Espaciado interno */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Cursor tipo puntero */
+            transition: background-color 0.3s;
+            /* Transición suave */
+            margin-top: 15px;
+            /* Añadir separación superior */
+        }
+
+        #html5-qrcode-button-camera-start:hover {
+            background-color: #218838;
+            /* Color de fondo al pasar el mouse */
+        }
+
+        /* Estilo para el selector de cámara */
+        #html5-qrcode-select-camera {
+            border: 1px solid #ced4da;
+            /* Borde gris claro */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            padding: 5px;
+            /* Espaciado interno */
+            
+            /* Ancho completo */
+            margin-top: 10px;
+            /* Margen superior */
+        }
+
+
+        #html5-qrcode-button-camera-stop {
+            background-color: #28a745;
+            /* Color de fondo verde */
+            color: white;
+            /* Color del texto blanco */
+            border: none;
+            /* Sin borde */
+            padding: 10px 20px;
+            /* Espaciado interno */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Cursor tipo puntero */
+            transition: background-color 0.3s;
+            /* Transición suave */
+            margin-top: 15px;
+            /* Añadir separación superior */
+        }
+
+        #html5-qrcode-button-camera-stop:hover {
+            background-color: #218838;
+            /* Color de fondo al pasar el mouse */
+        }
+
+
+      
     </style>
 </head>
 
@@ -177,28 +221,9 @@ if (!isset($_SESSION['user_id'])) {
             true
         );
 
+
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
-        // Renderizar el escáner
-        const observer = new MutationObserver(() => {
-            const button = document.getElementById('start-scanning-button');
-            const comboBox = document.getElementById('camera-selection');
-
-            if (button && comboBox) {
-                button.textContent = 'Start sdaasdasd'; // Cambiar texto del botón
-                const label = comboBox.querySelector('label');
-                if (label) {
-                    label.textContent = 'Select sadada'; // Cambiar texto del combo box
-                }
-                observer.disconnect(); // Dejar de observar una vez que se hayan encontrado los elementos
-            }
-        });
-
-        // Iniciar la observación del DOM
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
     </script>
 </body>
 
