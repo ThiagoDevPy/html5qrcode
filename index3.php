@@ -142,6 +142,15 @@ if (!isset($_SESSION['user_id'])) {
         }
 
 
+        #html5-qrcode-anchor-scan-type-change{
+           font-size: 0;
+        }
+
+        #reader img{
+            display: none;
+
+        }
+
       
     </style>
 </head>
@@ -163,7 +172,7 @@ if (!isset($_SESSION['user_id'])) {
                             <div id="camara">
                                 <div>
                                     <div id="cuadro">
-                                        <div id="reader" width="600px"></div>
+                                        <div id="reader" width="600px" style="border: none;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +219,6 @@ if (!isset($_SESSION['user_id'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script type="text/javascript" src="scripts/asistencia.js" ?<?php echo time(); ?>></script>
     <script>
         let isRedirecting = false; // Declarar la bandera fuera de la función
 
