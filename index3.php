@@ -9,6 +9,12 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
     exit(); // Asegúrate de salir del script después de redirigir
 }
+if (!isset($_SESSION['evento_id'])) {
+    // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+    header('Location: index1.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
+    exit(); // Asegúrate de salir del script después de redirigir
+
+}
 ?>
 
 

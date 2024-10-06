@@ -23,29 +23,29 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
 
+        $evento_id= $_SESSION['evento_id'];
 
-        $stmt = $conexion->prepare("SELECT * FROM asistencias WHERE empleado_id = ? ");
-        $stmt->bind_param("i", $user_id);
+        $stmt = $conexion->prepare("SELECT * FROM asistencias WHERE empleado_id = ? AND id_evento= ?");
+        $stmt->bind_param("ii", $user_id , $evento_id );
         $stmt->execute();
         $resulta = $stmt->get_result();
 
         if ($resulta->num_rows == 1) {
-            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo) VALUES (?, '$fecha', '$hora', 'SALIDA');");
-            $stmt->bind_param("i", $user_id);
+            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'SALIDA', ?);");
+            $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 header("Location: guardarexito.php");
             } else {
                 echo "Error al guardar asistencia: " . $stmt->error;
             }
         } elseif ($resulta->num_rows >= 2) {
-            header("Location: guardarmensaje.php");
+            echo $resulta;
             
         } elseif ($resulta->num_rows == 0) {
             // Aquí va la lógica para guardar los datos
-            $user_id = $_SESSION['user_id'];
 
-            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo) VALUES (?, '$fecha', '$hora', 'ENTRADA');");
-            $stmt->bind_param("i", $user_id);
+            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'ENTRADA', ?);");
+            $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 header("Location: guardarexito.php");
             } else {

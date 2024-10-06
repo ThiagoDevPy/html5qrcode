@@ -1,0 +1,16 @@
+<?php
+include '../conexion.php'; // Asegúrate de que esto sea correctoinclude 
+
+// Realiza la consulta para obtener los productos
+$query = "SELECT * FROM eventos";
+$result = $conexion->query($query);
+
+$productos = array();
+
+while ($row = $result->fetch_assoc()) {
+    $productos[] = $row; // Agrega cada producto al array
+}
+
+header('Content-Type: application/json');
+echo json_encode($productos); // Devuelve los productos como JSON
+?>
