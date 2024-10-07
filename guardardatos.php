@@ -23,10 +23,10 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
 
-        $evento_id= $_SESSION['evento_id'];
+        $evento_id = $_SESSION['evento_id'];
 
         $stmt = $conexion->prepare("SELECT * FROM asistencias WHERE empleado_id = ? AND id_evento= ?");
-        $stmt->bind_param("ii", $user_id , $evento_id );
+        $stmt->bind_param("ii", $user_id, $evento_id);
         $stmt->execute();
         $resulta = $stmt->get_result();
 
@@ -34,8 +34,8 @@ if (isset($_GET['id'])) {
             $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'SALIDA', ?);");
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
-                header("Location: guardarexito.php");
                 unset($_SESSION['evento_id']);
+                header("Location: guardarexito.php");
             } else {
                 echo "Error al guardar asistencia: " . $stmt->error;
             }
@@ -48,18 +48,17 @@ if (isset($_GET['id'])) {
             $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'ENTRADA', ?);");
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
+                unset($_SESSION['evento_id']);
                 header("Location: guardarexito.php");
-                unset($_SESSION['evento_id']);
             } else {
-                echo "Error al guardar asistencia: " . $stmt->error;
                 unset($_SESSION['evento_id']);
+                echo "Error al guardar asistencia: " . $stmt->error;
             }
         }
     } else {
-        die("EL QR ESTA EXPIRADO, PRUEBELO CON EL NUEVO QR ACTUALIZADO.");
         unset($_SESSION['evento_id']);
+        header("Location: obsoleto.php");
     }
-
 
 
     $stmt->close();
