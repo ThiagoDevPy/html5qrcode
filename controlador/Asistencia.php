@@ -2,7 +2,7 @@
 include '../conexion.php'; // Asegúrate de que esto sea correctoinclude 
 
 // Realiza la consulta para obtener los productos
-$query = "SELECT * FROM eventos";
+$query = "SELECT * FROM eventos WHERE estado='1'";
 $result = $conexion->query($query);
 
 $productos = array();
