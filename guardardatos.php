@@ -56,7 +56,7 @@ if (isset($_GET['id'])) {
             }
         }
     } else {
-        die("ID no válido o ya ha sido utilizado.");
+        die("EL QR ESTA EXPIRADO, PRUEBELO CON EL NUEVO QR ACTUALIZADO.");
         unset($_SESSION['evento_id']);
     }
 
