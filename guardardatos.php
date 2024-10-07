@@ -35,12 +35,13 @@ if (isset($_GET['id'])) {
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 header("Location: guardarexito.php");
+                unset($_SESSION['evento_id']);
             } else {
                 echo "Error al guardar asistencia: " . $stmt->error;
             }
         } elseif ($resulta->num_rows >= 2) {
-            echo $resulta;
-            
+            header("Location: guardarmensaje.php");
+            unset($_SESSION['evento_id']);
         } elseif ($resulta->num_rows == 0) {
             // Aquí va la lógica para guardar los datos
 
@@ -48,12 +49,15 @@ if (isset($_GET['id'])) {
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 header("Location: guardarexito.php");
+                unset($_SESSION['evento_id']);
             } else {
                 echo "Error al guardar asistencia: " . $stmt->error;
+                unset($_SESSION['evento_id']);
             }
         }
     } else {
         die("ID no válido o ya ha sido utilizado.");
+        unset($_SESSION['evento_id']);
     }
 
 
@@ -61,6 +65,7 @@ if (isset($_GET['id'])) {
     $stmt->close();
 } else {
     echo "No se recibió el ID del usuario.";
+    unset($_SESSION['evento_id']);
 }
 
 $conexion->close();
