@@ -157,6 +157,10 @@ if (!isset($_SESSION['evento_id'])) {
             height: 300px;
         }
 
+        #reader__scan_region{
+            height: 280px;
+        }
+
       
     </style>
 </head>
