@@ -154,7 +154,7 @@ if (!isset($_SESSION['evento_id'])) {
 
         #reader img{
             display: none;
-            height: 600px;
+            height: 300px;
         }
 
       
@@ -174,7 +174,7 @@ if (!isset($_SESSION['evento_id'])) {
                             <div id="camara">
                                 <div>
                                     <div id="cuadro">
-                                        <div id="reader" width="600px" style="border: none;"></div>
+                                        <div id="reader" width="300px" style="border: none;"></div>
                                     </div>
                                 </div>
                             </div>
