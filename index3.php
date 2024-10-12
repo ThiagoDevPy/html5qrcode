@@ -214,11 +214,7 @@ if (!isset($_SESSION['evento_id'])) {
 
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-            if (!isRedirecting) { 
-              
                     window.location.href = decodedText;
-               
-            }
         };
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
@@ -226,9 +222,9 @@ if (!isset($_SESSION['evento_id'])) {
             facingMode: {
                 exact: "environment"
             }
-        }, config, onScanSuccess);
+        }, config, qrCodeSuccessCallback);
 
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        html5QrcodeScanner.render(qrCodeSuccessCallback, onScanFailure);
     </script>
 </body>
 
