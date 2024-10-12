@@ -214,7 +214,17 @@ if (!isset($_SESSION['evento_id'])) {
 
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-            /* handle success */
+            if (!isRedirecting) { // Verificar si no se ha redirigido ya
+                isRedirecting = true; // Marcar como redirigiendo
+
+                // Detener el escáner
+                html5QrcodeScanner.clear().then(() => {
+                    // Redirigir a la URL escaneada
+                    window.location.href = decodedText;
+                }).catch((err) => {
+                    console.error('Error al detener el escáner:', err);
+                });
+            }
         };
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
