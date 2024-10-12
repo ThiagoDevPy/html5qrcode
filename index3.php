@@ -154,7 +154,7 @@ if (!isset($_SESSION['evento_id'])) {
 
         #reader img{
             display: none;
-
+            height: 600px;
         }
 
       
