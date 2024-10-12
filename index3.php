@@ -214,16 +214,10 @@ if (!isset($_SESSION['evento_id'])) {
 
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-            if (!isRedirecting) { // Verificar si no se ha redirigido ya
-                isRedirecting = true; // Marcar como redirigiendo
-
-                // Detener el escáner
-                html5QrcodeScanner.clear().then(() => {
-                    // Redirigir a la URL escaneada
+            if (!isRedirecting) { 
+              
                     window.location.href = decodedText;
-                }).catch((err) => {
-                    console.error('Error al detener el escáner:', err);
-                });
+               
             }
         };
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
@@ -232,7 +226,7 @@ if (!isset($_SESSION['evento_id'])) {
             facingMode: {
                 exact: "environment"
             }
-        }, config, qrCodeSuccessCallback);
+        }, config, onScanSuccess);
 
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
