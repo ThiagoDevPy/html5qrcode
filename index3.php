@@ -214,9 +214,20 @@ if (!isset($_SESSION['evento_id'])) {
 
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-                    window.location.href = decodedText;
+            window.location.href = decodedText;
+            html5QrCode.stop().then((ignore) => {
+                // QR Code scanning is stopped.
+            }).catch((err) => {
+                // Stop failed, handle it.
+            });
         };
-        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+        const config = {
+            fps: 10,
+            qrbox: {
+                width: 250,
+                height: 250
+            }
+        };
 
         html5QrCode.start({
             facingMode: {
