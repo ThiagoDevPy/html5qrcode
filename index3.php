@@ -59,7 +59,7 @@ if (!isset($_SESSION['evento_id'])) {
             bottom: 0;
         }
 
-        #html5-qrcode-button-camera-permission{
+        #html5-qrcode-button-camera-permission {
             background-color: #28a745;
             /* Color de fondo verde */
             color: white;
@@ -77,6 +77,7 @@ if (!isset($_SESSION['evento_id'])) {
             margin-top: 15px;
             /* Añadir separación superior */
         }
+
         #html5-qrcode-button-camera-permission:hover {
             background-color: #218838;
             /* Color de fondo al pasar el mouse */
@@ -102,7 +103,7 @@ if (!isset($_SESSION['evento_id'])) {
             /* Añadir separación superior */
         }
 
-       
+
         #html5-qrcode-button-camera-start:hover {
             background-color: #218838;
             /* Color de fondo al pasar el mouse */
@@ -116,7 +117,7 @@ if (!isset($_SESSION['evento_id'])) {
             /* Bordes redondeados */
             padding: 10px;
             /* Espaciado interno */
-            
+
             /* Ancho completo */
             margin-top: 10px;
             /* Margen superior */
@@ -148,25 +149,19 @@ if (!isset($_SESSION['evento_id'])) {
         }
 
 
-        #html5-qrcode-anchor-scan-type-change{
-           font-size: 0;
+        #html5-qrcode-anchor-scan-type-change {
+            font-size: 0;
         }
 
-        #reader img{
+        #reader img {
             display: none;
-            height: 300px;
-        }
 
-        #reader__scan_region{
-            height: 280px;
         }
-
-      
     </style>
 </head>
 
 <body>
-  
+
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
@@ -178,7 +173,7 @@ if (!isset($_SESSION['evento_id'])) {
                             <div id="camara">
                                 <div>
                                     <div id="cuadro">
-                                        <div id="reader" width="300px" style="border: none;"></div>
+                                        <div id="reader" width="600px" style="border: none;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -217,20 +212,19 @@ if (!isset($_SESSION['evento_id'])) {
             console.warn(`Código de escaneo error = ${error}`);
         }
 
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", {
-                fps: 20,
-                qrbox: {
-                    width: 250,
-                    height: 250
-                }
-            },
-            true
-        );
+        const html5QrCode = new Html5Qrcode("reader");
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            /* handle success */
+        };
+        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
+        html5QrCode.start({
+            facingMode: {
+                exact: "environment"
+            }
+        }, config, qrCodeSuccessCallback);
 
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-
     </script>
 </body>
 
