@@ -1,41 +1,49 @@
 <?php
 // Conectar a la base de datos
 include 'conexion.php';
-// Datos del nuevo usuario
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$cedula = $_POST['cedula'];
-$telefono = $_POST['telefono'];
-$carrera = $_POST['carrera'];
 
-$stmt = $conexion->prepare("SELECT * FROM empleados WHERE documento_numero = ?");
-$stmt->bind_param("s", $cedula);
-$stmt->execute();
-$result = $stmt->get_result();
+// Verificar si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Datos del nuevo usuario
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $cedula = $_POST['cedula'];
+    $telefono = $_POST['telefono'];
+    $carrera = $_POST['carrera'];
+    $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
 
+    // Verificar si el correo es válido
+    if (!$mail) {
+        die("Correo electrónico no válido.");
+    }
 
-
-    $stmt = $conexion->prepare("SELECT * FROM empleados WHERE documento_numero = ?");
-    $stmt->bind_param("s", $cedula );
+    $stmt = $conexion->prepare("SELECT * FROM alumnos WHERE ci = ?");
+    $stmt->bind_param("s", $cedula);
     $stmt->execute();
     $resulta = $stmt->get_result();
 
     if ($resulta->num_rows >= 1) {
-      echo  "Ya estas registrado";
+        echo "Ya estás registrado";
     } elseif ($resulta->num_rows == 0) {
         // Aquí va la lógica para guardar los datos
-
-        $sql = "INSERT INTO empleados (nombre,apellidos,documento_numero,telefono,carrera) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO alumnos (nombres, apellidos, ci, telefono, carrera, correo) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
-        $stmt->bind_param('sssss', $nombre, $apellido, $cedula, $telefono,$carrera);
+
+        if ($stmt === false) {
+            die("Error en la preparación: " . $conexion->error);
+        }
+
+        $stmt->bind_param('ssssss', $nombre, $apellido, $cedula, $telefono, $carrera, $mail);
         
         if ($stmt->execute()) {
             echo "Usuario registrado correctamente.";
-        }else{
-            echo "Error al insertar" . $stmt->error;
+        } else {
+            echo "Error al insertar: " . $stmt->error;
         }
     }
 
-
-
+    // Cerrar la declaración y la conexión
+    $stmt->close();
+    $conexion->close();
+}
 ?>

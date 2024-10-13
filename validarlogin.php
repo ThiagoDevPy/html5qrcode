@@ -13,7 +13,7 @@ $response = ['success' => false, 'message' => 'Nombre de usuario o contraseña i
 
 if ($cedula) {
     // Preparar y ejecutar la consulta
-    $stmt = $conexion->prepare("SELECT id FROM empleados WHERE documento_numero = ?");
+    $stmt = $conexion->prepare("SELECT id FROM alumnos WHERE ci = ?");
     $stmt->bind_param("s", $cedula);
     $stmt->execute();
     $result = $stmt->get_result();

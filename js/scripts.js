@@ -4,6 +4,7 @@ function registrarUsuario() {
     var cedula = document.getElementById('cedula').value.trim();
     var carrera = document.getElementById('carrera').value.trim();
     var telefono = document.getElementById('telefono').value.trim();
+    var correo = document.getElementById('mail').value.trim();
 
     // Verificar que ningún campo esté vacío
     if (!nombre || !apellido || !cedula || !carrera || !telefono) {
@@ -30,7 +31,8 @@ function registrarUsuario() {
         '&apellido=' + encodeURIComponent(apellido) +
         '&cedula=' + encodeURIComponent(cedula) +
         '&carrera=' + encodeURIComponent(carrera) +
-        '&telefono=' + encodeURIComponent(telefono)
+        '&telefono=' + encodeURIComponent(telefono) +
+        '&mail=' + encodeURIComponent(correo)
     );
 
 }

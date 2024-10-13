@@ -50,10 +50,13 @@
                                                 <input class="form-control" id="apellido" type="texr" required>
                                                 <label for="inputEmail">Apellidos</label>
                                             </div>        
-                                        
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="cedula" type="text" required>
                                                 <label for="inputEmail">Cedula</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="mail" type="text" required>
+                                                <label for="inputEmail">Correo</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="telefono" type="text" required>
@@ -63,6 +66,7 @@
                                                 <input class="form-control" id="carrera" type="text" required>
                                                 <label for="inputEmail">Carrera</label>
                                             </div>
+                                         
                                             <div class="mt-4 mb-0">
                                                 <button type="button" class="btn btn-primary" onclick="registrarUsuario()">Registrarme</button>
                                             </div>

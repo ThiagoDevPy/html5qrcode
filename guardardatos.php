@@ -25,13 +25,13 @@ if (isset($_GET['id'])) {
 
         $evento_id = $_SESSION['evento_id'];
 
-        $stmt = $conexion->prepare("SELECT * FROM asistencias WHERE empleado_id = ? AND id_evento= ?");
+        $stmt = $conexion->prepare("SELECT * FROM asistencias WHERE alumno_id = ? AND id_evento= ?");
         $stmt->bind_param("ii", $user_id, $evento_id);
         $stmt->execute();
         $resulta = $stmt->get_result();
 
         if ($resulta->num_rows == 1) {
-            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'SALIDA', ?);");
+            $stmt = $conexion->prepare("INSERT INTO asistencias (alumno_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'SALIDA', ?);");
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 unset($_SESSION['evento_id']);
@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
         } elseif ($resulta->num_rows == 0) {
             // Aquí va la lógica para guardar los datos
 
-            $stmt = $conexion->prepare("INSERT INTO asistencias (empleado_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'ENTRADA', ?);");
+            $stmt = $conexion->prepare("INSERT INTO asistencias (alumno_id, fecha,hora, tipo, id_evento) VALUES (?, '$fecha', '$hora', 'ENTRADA', ?);");
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 unset($_SESSION['evento_id']);
