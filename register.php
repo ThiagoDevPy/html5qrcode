@@ -66,6 +66,10 @@
                                                 <input class="form-control" id="carrera" type="text" required>
                                                 <label for="inputEmail">Carrera</label>
                                             </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="universidad" type="text" required>
+                                                <label for="inputEmail">Universidad</label>
+                                            </div>
                                          
                                             <div class="mt-4 mb-0">
                                                 <button type="button" class="btn btn-primary" onclick="registrarUsuario()">Registrarme</button>

@@ -5,6 +5,7 @@ function registrarUsuario() {
     var carrera = document.getElementById('carrera').value.trim();
     var telefono = document.getElementById('telefono').value.trim();
     var correo = document.getElementById('mail').value.trim();
+    var universidad = document.getElementById('universidad').value.trim();
 
     // Verificar que ningún campo esté vacío
     if (!nombre || !apellido || !cedula || !carrera || !telefono) {
@@ -32,10 +33,20 @@ function registrarUsuario() {
         '&cedula=' + encodeURIComponent(cedula) +
         '&carrera=' + encodeURIComponent(carrera) +
         '&telefono=' + encodeURIComponent(telefono) +
-        '&mail=' + encodeURIComponent(correo)
+        '&mail=' + encodeURIComponent(correo) +
+        '&universidad=' + encodeURIComponent(universidad)
     );
 
 }
+
+
+
+
+
+
+
+// Llamar a la función para obtener la información del usuario
+
 
 
 
@@ -150,3 +161,5 @@ document.getElementById('eliminar').addEventListener('click', function() {
         xhr.send();
     
 });
+
+

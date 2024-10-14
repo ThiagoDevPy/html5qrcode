@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = $_POST['telefono'];
     $carrera = $_POST['carrera'];
     $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
+    $universidad = $_POST['universidad'];
 
     // Verificar si el correo es válido
     if (!$mail) {
@@ -26,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Ya estás registrado";
     } elseif ($resulta->num_rows == 0) {
         // Aquí va la lógica para guardar los datos
-        $sql = "INSERT INTO alumnos (nombres, apellidos, ci, telefono, carrera, correo) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO alumnos (nombres, apellidos, ci, telefono, carrera, correo, universidad) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
 
         if ($stmt === false) {
             die("Error en la preparación: " . $conexion->error);
         }
 
-        $stmt->bind_param('ssssss', $nombre, $apellido, $cedula, $telefono, $carrera, $mail);
+        $stmt->bind_param('sssssss', $nombre, $apellido, $cedula, $telefono, $carrera, $mail,$universidad );
         
         if ($stmt->execute()) {
             echo "Usuario registrado correctamente.";
