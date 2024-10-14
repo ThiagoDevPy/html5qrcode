@@ -72,21 +72,24 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <header class="bg-header py-3">
-        <div class="container">
-            <h1 class="text-center text-white"><img src="img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
-        </div>
-    </header>
+<header class="bg-header py-3">
+    <div class="container">
+        <h1 class="text-center text-white">
+            <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
+        </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
+    </div>
+</header>
+
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="">
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Seleccionar Evento</h3>
+                                    <h4 class="text-center font-weight-light my-4">REGISTRAR MI ASISTENCIA</h4>
                                 </div>
                                 <div class="card-body">
                                    
@@ -95,13 +98,32 @@ if (!isset($_SESSION['user_id'])) {
                                         </select>
                                         <br>
                                         <button class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" id="guardar" >
-                                            Seleccionar Evento</button>
+                                            REGISTRAR</button>
                                         
                                 </div>
 
                             </div>
                         </div>
                     </div>
+
+
+
+
+                    
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <h4 class="text-center font-weight-light my-4">VER EVENTOS ASISTIDOS</h4>
+                                </div>
+                                <div class="card-body">
+                                   
+                                       <button class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" onclick="eventoAsistidos();">VER</button>
+                                            
+                                        
+                                </div>
+
+                            </div>
+                   
                 </div>
             </main>
         </div>

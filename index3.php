@@ -161,11 +161,13 @@ if (!isset($_SESSION['evento_id'])) {
 </head>
 
 <body>
-<header class="bg-header py-2">
-        <div class="container">
-            <h1 class="text-center text-white"><img src="img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
-        </div>
-    </header>
+<header class="bg-header py-3">
+    <div class="container">
+        <h1 class="text-center text-white">
+            <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
+        </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
+    </div>
+</header>
 
 
     <div id="layoutAuthentication">

@@ -16,7 +16,7 @@
             background-color: #f8f9fa; /* Color de fondo del body */
         }
         .bg-header {
-            background-color: #007bff; /* Color azul para el header */
+            background-color: #0056b3; /* Color azul para el header */
         }
         .bg-footer {
             background-color: #0056b3; /* Color azul para el footer */
@@ -30,7 +30,7 @@
         </div>
     </header>
 
-
+    <body class="d-flex flex-column min-vh-100"> <!-- Aquí comienza el body -->
 <div class="container mt-5 py-5">
     <div class="row justify-content-center">
         <div class="col-md-6">

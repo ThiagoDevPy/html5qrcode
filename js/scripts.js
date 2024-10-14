@@ -42,6 +42,11 @@ function registrarUsuario() {
 
 
 
+function eventoAsistidos(){
+    window.location.href = 'eventos.php';
+}
+
+
 
 
 
