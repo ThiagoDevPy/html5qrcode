@@ -99,17 +99,12 @@ if (!isset($_SESSION['user_id'])) {
                                         <br>
                                         <button class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" id="guardar" >
                                             REGISTRAR</button>
-                                        
                                 </div>
 
                             </div>
                         </div>
                     </div>
 
-
-
-
-                    
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
