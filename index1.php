@@ -117,7 +117,9 @@ if (!isset($_SESSION['user_id'])) {
                                 </div>
                                 <div class="card-body">
                                    
-                                       <button class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" onclick="eventoAsistidos();">VER</button>
+                                <a href="eventos.php" class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                     <button class="btn btn-primary">VER</button>
+                                </a>
                                             
                                         
                                 </div>
