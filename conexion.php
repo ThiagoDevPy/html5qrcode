@@ -1,5 +1,5 @@
 <?php
-$host = 'junction.proxy.rlwy'; // Ejemplo: 'mysql-123456.c.database.azure.com'
+$host = 'junction.proxy.rlwy.net'; // Ejemplo: 'mysql-123456.c.database.azure.com'
 $port = '57690'; // Asegúrate de usar el puerto correcto
 $user = 'root'; // Tu nombre de usuario
 $pass = 'jTegmeDUEAScouxevhaXXazZTThvNptv'; // Tu contraseña
