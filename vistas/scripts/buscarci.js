@@ -3,7 +3,7 @@ function buscarCi(){
     var cedula = document.getElementById('cedula').value;
 
     $.ajax({
-        url: 'validarlogin.php', // Cambia esto a la ruta de tu archivo PHP
+        url: '../controlador/validarlogin.php', // Cambia esto a la ruta de tu archivo PHP
         type: 'GET', // Cambia a 'POST' si lo necesitas
         data: { cedula: cedula }, // Envía la cédula
         dataType: 'json',
@@ -95,7 +95,7 @@ function login() {
    
     // Crear una instancia de XMLHttpRequest
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'validarlogin.php', true);
+    xhr.open('POST', '../controlador/validarlogin.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
    
     // Configurar el callback para manejar la respuesta

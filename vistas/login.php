@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Asistencia Uninorte</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -26,7 +26,7 @@
 </head>
 <header class="bg-header py-3">
         <div class="container">
-            <h1 class="text-center text-white"><img src="img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
+            <h1 class="text-center text-white"><img src="../img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
         </div>
     </header>
 
@@ -172,6 +172,6 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/buscarci.js"></script>
+    <script src="scripts/buscarci.js"></script>
 </body>
 </html>

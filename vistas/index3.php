@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require 'conexion.php';
+require '../config/conexion.php';
 require 'phpqrcode/qrlib.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -28,7 +28,7 @@ if (!isset($_SESSION['evento_id'])) {
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Asistencia</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
@@ -164,7 +164,7 @@ if (!isset($_SESSION['evento_id'])) {
 <header class="bg-header py-3">
     <div class="container">
         <h1 class="text-center text-white">
-            <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
+            <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt=""></a>
         </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
     </div>
 </header>
@@ -226,7 +226,7 @@ if (!isset($_SESSION['evento_id'])) {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+   
     <script>
         let isRedirecting = false; // Declarar la bandera fuera de la función
 

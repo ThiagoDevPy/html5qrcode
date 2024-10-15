@@ -1,5 +1,6 @@
 <?php
-include '../conexion.php'; // Asegúrate de que esto sea correctoinclude 
+include '../config/conexion.php'; 
+
 
 // Realiza la consulta para obtener los productos
 $query = "SELECT * FROM eventos WHERE estado='1'";

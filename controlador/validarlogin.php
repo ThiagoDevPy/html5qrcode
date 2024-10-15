@@ -1,7 +1,7 @@
 <?php
 session_start(); // Iniciar la sesión
 
-include 'conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
+include '../config/conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
 
 
 if ($_SERVER["REQUEST_METHOD"] == 'GET') {
