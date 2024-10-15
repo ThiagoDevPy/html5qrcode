@@ -55,9 +55,10 @@ if (!isset($_SESSION['user_id'])) {
             /* Cambia el borde a blanco */
         }
 
-        .navbar-toggler-icon {
-            background-color: #f8f9fa;
-            border-radius: 5px;
+        .navbar-toggler-iconn {
+            
+            height: 40px;
+            width: 40px;
             /* Cambia el color del icono de hamburguesa a blanco */
         }
 
@@ -88,7 +89,7 @@ if (!isset($_SESSION['user_id'])) {
         <nav class="navbar navbar-expand-lg bg-header">
             <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -112,9 +113,9 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-    <div class="container mt-5" id="eventos-container">
+    <div class="container mt-5 " id="eventos-container">
         <h3 class="text-center mb-4">Eventos Asistidos</h3>
-        <div class="d-flex flex-column align-items-center"> <!-- Contenedor centrado -->
+        <div class="d-flex flex-column align-items-center d-flex justify-content-center"> <!-- Contenedor centrado -->
             <!-- Las cards de eventos se insertarán aquí -->
         </div>
     </div>

@@ -67,9 +67,10 @@ if (!isset($_SESSION['evento_id'])) {
             /* Cambia el borde a blanco */
         }
 
-        .navbar-toggler-icon {
-            background-color: #f8f9fa;
-            border-radius: 5px;
+        .navbar-toggler-iconn {
+            
+            height: 40px;
+            width: 40px;
             /* Cambia el color del icono de hamburguesa a blanco */
         }
 
@@ -202,7 +203,7 @@ if (!isset($_SESSION['evento_id'])) {
         <nav class="navbar navbar-expand-lg bg-header">
             <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -210,7 +211,7 @@ if (!isset($_SESSION['evento_id'])) {
                             <a class="nav-link" href="index1.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Ver Mis Eventos</a>
+                            <a class="nav-link" href="eventos.php">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>

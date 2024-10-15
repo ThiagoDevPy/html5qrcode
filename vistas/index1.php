@@ -59,9 +59,10 @@ if (!isset($_SESSION['user_id'])) {
             /* Cambia el borde a blanco */
         }
 
-        .navbar-toggler-icon {
-            background-color: #f8f9fa;
-            border-radius: 5px;
+        .navbar-toggler-iconn {
+            
+            height: 40px;
+            width: 40px;
             /* Cambia el color del icono de hamburguesa a blanco */
         }
 
@@ -80,6 +81,8 @@ if (!isset($_SESSION['user_id'])) {
             /* Ajusta el tamaño del logo */
             height: auto;
         }
+
+    
     </style>
 </head>
 
@@ -96,7 +99,7 @@ if (!isset($_SESSION['user_id'])) {
         <nav class="navbar navbar-expand-lg bg-header">
             <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -116,33 +119,31 @@ if (!isset($_SESSION['user_id'])) {
     </header>
 
 
-    <div id="layoutAuthentication">
-        <div id="layoutAuthentication_content">
-            <main>
-                <div class="container">
-                    <div>
-                        <div class="align-items-center">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h4 class="text-center font-weight-light my-4">REGISTRAR MI ASISTENCIA</h4>
+    
+        <main>
+            <div class="container">
+                <div>
+                    <div class="align-items-center">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h4 class="text-center font-weight-light my-4">REGISTRAR MI ASISTENCIA</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center">
+                                <select id="mi-select" class="form-select form-select-lg" required>
+                                    <option value="">Selecciona un evento</option>
+                                </select>
                                 </div>
-                                <div class="card-body ">
-
-                                    <select id="mi-select" class="form-select form-select-lg" required>
-                                        <option value="">Selecciona un evento</option>
-                                    </select>
-                                    <br>
-                                    <button class="d-flex align-items-center btn btn-primary" id="guardar">REGISTRAR</button>
+                                <br>
+                                <div class="d-flex align-items-center justify-content-center">
+                                <button class="btn btn-primary" id="guardar">REGISTRAR</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                    
-            </main>
-        </div>
-    </div>
+                </div>
+            </div>
+        </main>
 
     <footer class="bg-footer py-4 mt-auto">
         <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
