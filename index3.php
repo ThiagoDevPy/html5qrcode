@@ -168,7 +168,7 @@ if (!isset($_SESSION['evento_id'])) {
         </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
     </div>
 </header>
-
+<body class="d-flex flex-column min-vh-100">
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">

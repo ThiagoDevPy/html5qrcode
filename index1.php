@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         .bg-header {
-            background-color: #007bff;
+            background-color: #0056b3;
             /* Color azul para el header */
         }
 
@@ -71,57 +71,53 @@ if (!isset($_SESSION['user_id'])) {
     </style>
 </head>
 
-<body>
-<header class="bg-header py-3">
-    <div class="container">
-        <h1 class="text-center text-white">
-            <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
-        </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
-    </div>
-</header>
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-header py-3">
+        <div class="container">
+            <h1 class="text-center text-white">
+                <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
+            </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
+        </div>
+    </header>
 
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="">
-                        <div class="col-lg-5">
+                    <div>
+                        <div class="align-items-center">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
                                     <h4 class="text-center font-weight-light my-4">REGISTRAR MI ASISTENCIA</h4>
                                 </div>
-                                <div class="card-body">
-                                   
-                                        <select id="mi-select" class="form-select form-select-lg"  required>
-                                            <option value="">Selecciona un evento</option>
-                                        </select>
-                                        <br>
-                                        <button class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" id="guardar" >
-                                            REGISTRAR</button>
+                                <div class="card-body ">
+
+                                    <select id="mi-select" class="form-select form-select-lg" required>
+                                        <option value="">Selecciona un evento</option>
+                                    </select>
+                                    <br>
+                                    <button class="d-flex align-items-center btn btn-primary" id="guardar">REGISTRAR</button>
                                 </div>
 
                             </div>
                         </div>
                     </div>
 
-                        <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h4 class="text-center font-weight-light my-4">VER EVENTOS ASISTIDOS</h4>
-                                </div>
-                                <div class="card-body">
-                                   
-                                <a href="eventos.php" class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                     <button class="btn btn-primary">VER</button>
-                                </a>
-                                            
-                                        
-                                </div>
-
+                    <div class="align-items-center">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h4 class="text-center font-weight-light my-4">VER EVENTOS ASISTIDOS</h4>
                             </div>
-                   
-                </div>
+                            <div class="card-body ">
+                                <a href="eventos.php" class="d-flex align-items-center">
+                                    <button class="btn btn-primary">VER</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
             </main>
         </div>
     </div>
