@@ -1,6 +1,4 @@
-
 <?php
-ob_start(); // I
 session_start(); // Inicia la sesión
 
 if (isset($_POST['id'])) {
@@ -9,5 +7,4 @@ if (isset($_POST['id'])) {
 } else {
     echo json_encode(['status' => 'error', 'message' => 'ID no recibido.']);
 }
-ob_end_flush();
 ?>
