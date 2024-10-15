@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Asistencia Uninorte</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -28,16 +28,70 @@
             color: white;
             /* Color del texto en el footer */
         }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        
+            border: none;
+            /* Para mantener el botón a la izquierda */
+        }
+
+        .navbar-toggler {
+             border: none;
+            /* Cambia el borde a blanco */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            /* Cambia el color del icono de hamburguesa a blanco */
+        }
+
+        .nav-link {
+            color: white;
+            /* Color del texto de los enlaces */
+        }
+
+        .nav-link:hover {
+            color: #ccc;
+            /* Color al pasar el mouse */
+        }
+
+        .logo {
+            max-width: 150px;
+            /* Ajusta el tamaño del logo */
+            height: auto;
+        }
     </style>
 </head>
 <header class="bg-header py-3">
-    <div class="container">
-        <h1 class="text-center text-white">
-            <a href="index1.php"><img src="img/Logos-uninorte-05-1.png" alt=""></a>
-        </h1> <!-- Cambia "tu-url-aqui" por la URL deseada -->
-    </div>
-</header>
+        <div class="container">
+            <h1 class="text-center text-white">
+                <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+            </h1>
+        </div>
 
+        <nav class="navbar navbar-expand-lg bg-header">
+            <div class="container">
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index1.php">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.php">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.php">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
 <body class="d-flex flex-column min-vh-100"> <!-- Aquí comienza el body -->
@@ -45,7 +99,7 @@
 
 
     <div class="container mt-5" id="eventos-container">
-        <h2 class="text-center mb-4">Eventos Asistidos</h2>
+        <h3 class="text-center mb-4">Eventos Asistidos</h3>
         <div class="d-flex flex-column align-items-center"> <!-- Contenedor centrado -->
             <!-- Las cards de eventos se insertarán aquí -->
         </div>
@@ -82,13 +136,13 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/buscarci.js"></script>
+    <script src="scripts/buscarci.js"></script>
 
 
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: 'controlador/eventoasistido.php',
+                url: '../controlador/eventoasistido.php',
                 method: 'GET',
                 dataType: 'json',
                 success: function(data) {

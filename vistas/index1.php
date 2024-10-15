@@ -25,32 +25,10 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login Sistema Ventas</title>
+    <title>Asistencia Uninorte</title>
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../public/css/font-awesome.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../public/css/_all-skins.min.css">
-    <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="../public/img/icono.ico">
-
-    <!-- DATATABLES -->
-    <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css">
-    <link href="../public/datatables/buttons.dataTables.min.css" rel="stylesheet" />
-    <link href="../public/datatables/responsive.dataTables.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css">
-
-
-
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             background-color: #f8f9fa;
@@ -68,7 +46,6 @@ if (!isset($_SESSION['user_id'])) {
             color: white;
             /* Color del texto en el footer */
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -84,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
 
         .navbar-toggler-icon {
             background-color: #f8f9fa;
-          
+            border-radius: 5px;
             /* Cambia el color del icono de hamburguesa a blanco */
         }
 
@@ -109,7 +86,7 @@ if (!isset($_SESSION['user_id'])) {
 <body class="d-flex flex-column min-vh-100">
 
 
-    <header class="bg-header">
+    <header class="bg-header py-3">
         <div class="container">
             <h1 class="text-center text-white">
                 <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
@@ -194,26 +171,9 @@ if (!isset($_SESSION['user_id'])) {
             </ul>
         </div>
     </footer>
-    <script src="../public/js/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="../public/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../public/js/app.min.js"></script>
+ 
 
-    <!-- DATATABLES -->
-    <script src="../public/datatables/jquery.dataTables.min.js"></script>
-    <script src="../public/datatables/dataTables.buttons.min.js"></script>
-    <script src="../public/datatables/buttons.html5.min.js"></script>
-    <script src="../public/datatables/buttons.colVis.min.js"></script>
-    <script src="../public/datatables/jszip.min.js"></script>
-    <script src="../public/datatables/pdfmake.min.js"></script>
-    <script src="../public/datatables/vfs_fonts.js"></script>
-
-    <!-- Bootbox -->
-    <script src="../public/js/bootbox.min.js"></script>
-
-    <!-- Select -->
-    <script src="../public/js/bootstrap-select.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="scripts/evento.js"></script>

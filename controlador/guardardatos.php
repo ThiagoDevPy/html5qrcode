@@ -35,12 +35,12 @@ if (isset($_GET['id'])) {
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 unset($_SESSION['evento_id']);
-                header("Location: guardarexito.php");
+                header("Location: ../vistas/guardarexito.php");
             } else {
                 echo "Error al guardar asistencia: " . $stmt->error;
             }
         } elseif ($resulta->num_rows >= 2) {
-            header("Location: guardarmensaje.php");
+            header("Location: ../vistas/guardarmensaje.php");
             unset($_SESSION['evento_id']);
         } elseif ($resulta->num_rows == 0) {
             // Aquí va la lógica para guardar los datos
@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
             $stmt->bind_param("ii", $user_id, $evento_id);
             if ($stmt->execute()) {
                 unset($_SESSION['evento_id']);
-                header("Location: guardarexito.php");
+                header("Location: ../vistas/guardarexito.php");
             } else {
                 unset($_SESSION['evento_id']);
                 echo "Error al guardar asistencia: " . $stmt->error;
@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
         }
     } else {
         unset($_SESSION['evento_id']);
-        header("Location: obsoleto.php");
+        header("Location: ../vistas/obsoleto.php");
     }
 
 
