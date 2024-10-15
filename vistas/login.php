@@ -16,10 +16,10 @@
             background-color: #f8f9fa; /* Color de fondo del body */
         }
         .bg-header {
-            background-color: #0056b3; /* Color azul para el header */
+            background-color: #007bff; /* Color azul para el header */
         }
         .bg-footer {
-            background-color: #0056b3; /* Color azul para el footer */
+            background-color: #007bff; /* Color azul para el footer */
             color: white; /* Color del texto en el footer */
         }
     </style>

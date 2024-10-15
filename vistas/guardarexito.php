@@ -5,9 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Asistencia Guardada</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Color de fondo del body */
+        }
+
+        .bg-header {
+            background-color: #007bff;
+            /* Color azul para el header */
+        }
+
+        .bg-footer {
+            background-color: #007bff;
+            /* Color azul para el footer */
+            color: white;
+            /* Color del texto en el footer */
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        
+            border: none;
+            /* Para mantener el botón a la izquierda */
+        }
+
+        .navbar-toggler {
+             border: none;
+            /* Cambia el borde a blanco */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            /* Cambia el color del icono de hamburguesa a blanco */
+        }
+
+        .nav-link {
+            color: white;
+            /* Color del texto de los enlaces */
+        }
+
+        .nav-link:hover {
+            color: #ccc;
+            /* Color al pasar el mouse */
+        }
+
+        .logo {
+            max-width: 150px;
+            /* Ajusta el tamaño del logo */
+            height: auto;
+        }
+    </style>
 </head>
+
+<header class="bg-header py-3">
+        <div class="container">
+            <h1 class="text-center text-white">
+                <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+            </h1>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-header">
+            <div class="container">
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index1.php">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.php">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 <body class="bg-light"> <!-- Cambié el fondo a un color claro -->
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">

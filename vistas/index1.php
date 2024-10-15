@@ -36,12 +36,12 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         .bg-header {
-            background-color: #0056b3;
+            background-color: #007bff;
             /* Color azul para el header */
         }
 
         .bg-footer {
-            background-color: #0056b3;
+            background-color: #007bff;
             /* Color azul para el footer */
             color: white;
             /* Color del texto en el footer */
@@ -107,7 +107,7 @@ if (!isset($_SESSION['user_id'])) {
                             <a class="nav-link" href="eventos.php">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.php">Contacto</a>
+                            <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
                         </li>
                     </ul>
                 </div>
