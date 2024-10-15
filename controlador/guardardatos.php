@@ -3,7 +3,7 @@ define("ZONA_HORARIA", "America/Asuncion");
 date_default_timezone_set(ZONA_HORARIA);
 session_start();
 $user_id = $_SESSION['user_id'];
-require 'conexion.php';
+require '../config/conexion.php';
 
 $fecha = date("Y-m-d");
 $hora = date("H:i.s");
