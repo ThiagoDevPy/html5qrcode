@@ -210,7 +210,7 @@ if (!isset($_SESSION['evento_id'])) {
                             <a class="nav-link" href="index1.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Eventos</a>
+                            <a class="nav-link" href="eventos.php">Ver Mis Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
