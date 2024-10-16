@@ -24,7 +24,7 @@
         }
     </style>
 </head>
-<header class="bg-header py-3">
+<header class="bg-header py-2">
         <div class="container">
             <h1 class="text-center text-white"><img src="../img/Logos-uninorte-05-1.png" alt=""></h1> <!-- Cambia esto por tu logo -->
         </div>
@@ -43,8 +43,9 @@
                     <label class="form-label mt-4">N° de Cédula:</label>
                         <div class="col-md-8">
                             <input type="number" class="form-control" id="cedula" name="txt_ci" placeholder="Introduzca su Cedula de Identidad" autofocus required>
-                        </div>
-                        <div class="col-md-2">
+                        </div> 
+                        
+                        <div class="col-md-2 d-flex align-items-center justify-content-center py-4">
                             <input type="button" class="btn btn-primary" id="btn_ci" onclick="buscarCi()" value="Buscar" >
                         </div>
                     </div>
@@ -83,9 +84,12 @@
                         </div>
 
 
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                        <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
                          <a class="btn btn-primary" onclick="login()">Iniciar Sesion</a>
                         </div>
+
+
+                        
                             
                         </div>
 
@@ -119,7 +123,7 @@
                                 </select>
                             </div>
 
-                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
                             <a class="btn btn-primary" onclick="registrarUsuario()">Registrar</a>
                             </div>
                     </div>
@@ -143,7 +147,7 @@
 
 
 
-<footer class="bg-footer py-4 mt-auto">
+<footer class="bg-footer py-2 mt-auto">
     <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
         <h5>Contáctanos</h5>
         <ul class="list-unstyled">

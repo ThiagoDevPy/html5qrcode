@@ -47,20 +47,22 @@ if (!isset($_SESSION['user_id'])) {
             /* Color del texto en el footer */
         }
         .navbar {
-            display: flex;
-            justify-content: space-between;
-        
-            border: none;
+            padding: 0;
+             border: none;
+             margin: 0 auto; /* Centra el ul */
+             display: flex; /* Usar flexbox */
+             justify-content: center; /* C
             /* Para mantener el botón a la izquierda */
         }
 
         .navbar-toggler {
              border: none;
+             padding: 0;
+             margin: 0;
             /* Cambia el borde a blanco */
         }
 
         .navbar-toggler-iconn {
-            
             height: 40px;
             width: 40px;
             /* Cambia el color del icono de hamburguesa a blanco */
@@ -89,34 +91,35 @@ if (!isset($_SESSION['user_id'])) {
 <body class="d-flex flex-column min-vh-100">
 
 
-    <header class="bg-header py-3">
-        <div class="container">
-            <h1 class="text-center text-white">
-                <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
-            </h1>
-        </div>
+<header class="bg-header py-3">
+    <div class="container">
+        <h1 class="text-center text-white">
+            <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+        </h1>
+    </div>
 
-        <nav class="navbar navbar-expand-lg bg-header">
-            <div class="container">
+    <nav class="navbar navbar-expand-lg bg-header">
+        <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index1.php">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav"> <!-- Añade mx-auto aquí -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index1.php">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
 
 
     
@@ -145,7 +148,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </main>
 
-    <footer class="bg-footer py-4 mt-auto">
+    <footer class="bg-footer py-2 mt-auto">
         <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
             <h5>Contáctanos</h5>
             <ul class="list-unstyled">

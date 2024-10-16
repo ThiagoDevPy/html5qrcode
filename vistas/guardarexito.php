@@ -25,15 +25,18 @@
             /* Color del texto en el footer */
         }
         .navbar {
-            display: flex;
-            justify-content: space-between;
-        
-            border: none;
+            padding: 0;
+             border: none;
+             margin: 0 auto; /* Centra el ul */
+             display: flex; /* Usar flexbox */
+             justify-content: center; /* C
             /* Para mantener el botón a la izquierda */
         }
 
         .navbar-toggler {
              border: none;
+             padding: 0;
+             margin: 0;
             /* Cambia el borde a blanco */
         }
 
@@ -80,7 +83,7 @@
                             <a class="nav-link" href="index1.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Eventos</a>
+                            <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>

@@ -43,15 +43,18 @@ if (!isset($_SESSION['user_id'])) {
             /* Color del texto en el footer */
         }
         .navbar {
-            display: flex;
-            justify-content: space-between;
-        
-            border: none;
+            padding: 0;
+             border: none;
+             margin: 0 auto; /* Centra el ul */
+             display: flex; /* Usar flexbox */
+             justify-content: center; /* C
             /* Para mantener el botón a la izquierda */
         }
 
         .navbar-toggler {
              border: none;
+             padding: 0;
+             margin: 0;
             /* Cambia el borde a blanco */
         }
 
@@ -97,7 +100,7 @@ if (!isset($_SESSION['user_id'])) {
                             <a class="nav-link" href="index1.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Eventos</a>
+                            <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
@@ -122,7 +125,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-    <footer class="bg-footer py-4 mt-auto botton-0">
+    <footer class="bg-footer py-2 mt-auto botton-0">
         <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
             <h5>Contáctanos</h5>
             <ul class="list-unstyled">
