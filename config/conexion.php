@@ -2,9 +2,9 @@
 include "database.php";
 // Configuración de la base de datos
 $host = 'fra1.clusters.zeabur.com';
-$port = '30467';
+$port = '32505';
 $user = 'root';
-$pass = '3Hax6NeFyIRVC8Z712S5Pkmbg9Mcu40i';
+$pass = '1L0Vy8R52pu3hsjCHwF7xqYB6gd9c4Dt';
 $dbname = 'zeabur';
 
 try {
