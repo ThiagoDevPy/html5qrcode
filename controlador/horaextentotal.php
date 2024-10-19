@@ -18,8 +18,7 @@ $user_id = $_SESSION['user_id'];
 $stmt = $conexion->prepare("SELECT SUM(e.horaexten) AS total_horaexten
 FROM asistencias a
 INNER JOIN eventos e ON a.id_evento = e.id
-WHERE a.alumno_id = ? AND a.tipo = 'SALIDA'
-GROUP BY e.id, e.nombre, a.id, a.alumno_id, a.tipo, e.estado, e.links, e.horaexten, e.fecha;");
+WHERE a.alumno_id = ? AND a.tipo = 'SALIDA'");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
