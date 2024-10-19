@@ -1,6 +1,6 @@
 <?php
 session_start(); // Iniciar la sesión
-
+ob_start();
 include '../config/conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
 
 
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     echo json_encode($response);
     
 }
-
+ob_end_flush();
 ?>
 
 

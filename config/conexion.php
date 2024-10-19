@@ -18,4 +18,3 @@ try {
     echo $e->getMessage(); // Muestra un mensaje genérico al usuario
 }
 ?>
-
