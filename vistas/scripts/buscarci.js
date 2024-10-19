@@ -144,7 +144,7 @@ function login() {
     console.log(nombre + " " + apellido + " " + cedula + " " + carreraTexto + " " + universidadTexto);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'registrarusuario.php', true);
+    xhr.open('POST', '../controlador/registrarusuario.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         if (xhr.status === 200) {
