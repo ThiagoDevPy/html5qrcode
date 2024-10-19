@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $id = $_SESSION['user_id'];
 
 // Preparar la consulta
-$sql = "SELECT e.nombre, a.*, e.estado, e.fecha AS fechaevento FROM asistencias a INNER JOIN eventos e ON a.id_evento = e.id WHERE a.alumno_id = ? AND tipo = 'SALIDA'";
+$sql = "SELECT e.nombre, a.*, e.estado,e.horaexten, e.links, e.fecha AS fechaevento FROM asistencias a INNER JOIN eventos e ON a.id_evento = e.id WHERE a.alumno_id = ? AND tipo = 'SALIDA'";
 
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $id); // 'i' para integer

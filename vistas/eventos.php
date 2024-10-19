@@ -42,24 +42,28 @@ if (!isset($_SESSION['user_id'])) {
             color: white;
             /* Color del texto en el footer */
         }
+
         .navbar {
             padding: 0;
-             border: none;
-             margin: 0 auto; /* Centra el ul */
-             display: flex; /* Usar flexbox */
-             justify-content: center; /* C
+            border: none;
+            margin: 0 auto;
+            /* Centra el ul */
+            display: flex;
+            /* Usar flexbox */
+            justify-content: center;
+            /* C
             /* Para mantener el botón a la izquierda */
         }
 
         .navbar-toggler {
-             border: none;
-             padding: 0;
-             margin: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
             /* Cambia el borde a blanco */
         }
 
         .navbar-toggler-iconn {
-            
+
             height: 40px;
             width: 40px;
             /* Cambia el color del icono de hamburguesa a blanco */
@@ -83,33 +87,33 @@ if (!isset($_SESSION['user_id'])) {
     </style>
 </head>
 <header class="bg-header py-3">
-        <div class="container">
-            <h1 class="text-center text-white">
-                <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
-            </h1>
-        </div>
+    <div class="container">
+        <h1 class="text-center text-white">
+            <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+        </h1>
+    </div>
 
-        <nav class="navbar navbar-expand-lg bg-header">
-            <div class="container">
+    <nav class="navbar navbar-expand-lg bg-header">
+        <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index1.php">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index1.php">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
 
 <body class="d-flex flex-column min-vh-100"> <!-- Aquí comienza el body -->
@@ -118,6 +122,9 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="container mt-5 " id="eventos-container">
         <h3 class="text-center mb-4">Eventos Asistidos</h3>
+        <div class="alert alert-info mt-4">
+                    <strong>Hora de Extension Total: <span class="hidden-xs" id="totalhoraexten"></span></strong> 
+                </div>
         <div class="d-flex flex-column align-items-center d-flex justify-content-center"> <!-- Contenedor centrado -->
             <!-- Las cards de eventos se insertarán aquí -->
         </div>
@@ -164,18 +171,20 @@ if (!isset($_SESSION['user_id'])) {
                 method: 'GET',
                 dataType: 'json',
                 success: function(data) {
+                    // Mostrar la suma de horaexten
                     $.each(data, function(index, evento) {
                         $('#eventos-container').append(`
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">${evento.nombre}</h5>
-                                    <p class="card-text">Descargar Certificado</p>
-                                     <p class="card-text">
-                                    <a href="https://drive.google.com/drive/folders/13LNYr8NpebL7pwXARyokRijpvkA9Cdvo" target="_blank">https://drive.google.com/drive/folders/13LNYr8NpebL7pwXARyokRijpvkA9Cdvo</a>
-                                </p>
-                                    <p class="card-text"><small class="text-muted">${evento.fechaevento}</small></p>
-                                </div>
-                            </div>
+                               <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${evento.nombre}</h5>
+                            <p class="card-text">Descargar Certificado</p>
+                            <p class="card-text">
+                                <a href="${evento.links}" target="_blank">${evento.links}</a>
+                            </p>
+                            <p class="card-text">Hora de Extension: ${evento.horaexten}</p>
+                            <p class="card-text"><small class="text-muted">${evento.fechaevento}</small></p>
+                        </div>
+                    </div>
                         `);
                     });
                 },
@@ -185,6 +194,8 @@ if (!isset($_SESSION['user_id'])) {
             });
         });
     </script>
+
+    <script src="scripts/eventoasis.js"></script>
 </body>
 
 </html>
