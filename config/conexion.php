@@ -1,11 +1,11 @@
 <?php
 include "database.php";
 // Configuración de la base de datos
-$host = 'fra1.clusters.zeabur.com';
-$port = '31149';
+$host = 'autorack.proxy.rlwy.net';
+$port = '48325';
 $user = 'root';
-$pass = '3VpXdYRfe4gqJ5ZD1zt2Go0Oj9v78uT6';
-$dbname = 'zeabur';
+$pass = 'ghHTmbpryXRjZFfqKjZnIrLwAQLDiKoS';
+$dbname = 'railway';
 
 
 try {
