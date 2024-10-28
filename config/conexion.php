@@ -2,10 +2,11 @@
 include "database.php";
 // Configuración de la base de datos
 $host = 'fra1.clusters.zeabur.com';
-$port = '31686';
+$port = '31149';
 $user = 'root';
-$pass = 'dv712uY6im84sxEH5hkAUy90PXLwR3ot';
+$pass = '3VpXdYRfe4gqJ5ZD1zt2Go0Oj9v78uT6';
 $dbname = 'zeabur';
+
 
 try {
     // Crear una instancia de la clase Database
