@@ -1,4 +1,5 @@
 <?php
+
 class Database {
     private $host;
     private $port;
@@ -6,6 +7,9 @@ class Database {
     private $pass;
     private $dbname;
     private $conexion;
+
+
+
 
     public function __construct($host, $port, $user, $pass, $dbname) {
         $this->host = $host;
