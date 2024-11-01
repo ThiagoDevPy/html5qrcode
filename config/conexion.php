@@ -1,10 +1,10 @@
 <?php
 include "database.php";
 // Configuración de la base de datos
-$host = 'autorack.proxy.rlwy.net';
-$port = '22430';
+$host = 'junction.proxy.rlwy.net';
+$port = '39893';
 $user = 'root';
-$pass = 'IXLqTwmjWQBXbYLhgIKQGVBmxAyMESYV';
+$pass = 'NJFPNilMTsPIvEAzABFvoICAwKnuOoVP';
 $dbname = 'railway';
 
 
