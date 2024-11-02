@@ -91,13 +91,14 @@ if (!isset($_SESSION['user_id'])) {
         </h1>
     </div>
 
+   
     <nav class="navbar navbar-expand-lg bg-header">
         <div class="container">
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav"> <!-- Añade mx-auto aquí -->
                     <li class="nav-item">
                         <a class="nav-link" href="udn.php">Inicio</a>
                     </li>

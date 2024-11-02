@@ -13,11 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
     $universidad = $_POST['universidad'];
 
-    // Verificar si el correo es válido
-    if (!$mail) {
-        die("Correo electrónico no válido.");
-    }
-
+    
     $stmt = $conexion->prepare("SELECT * FROM alumnos WHERE ci = ?");
     $stmt->bind_param("s", $cedula);
     $stmt->execute();

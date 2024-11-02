@@ -47,7 +47,15 @@
                     <div class="card-header text-white bg-primary">
                         <strong>➪ INICIAR SESION</strong>
                     </div>
+
+
                     <div id="registration-form" class="p-5" method="POST" action="registrar/participantes.php">
+                        <div class="alert alert-warning" role="alert" style="display: none;" id="noregistrado">
+                            No estas registrado, puedes registrarte ahora.
+                        </div>
+                        <div class="alert alert-success" role="alert" style="display: none;" id="registradoco">
+                            Registrado Correctamente!
+                        </div>
                         <div class="mb-3 row align-items-center">
                             <label class="form-label mt-4">N° de Cédula:</label>
                             <div class="col-md-8">
@@ -58,21 +66,23 @@
                                 <input type="button" class="btn btn-primary" id="btn_ci" onclick="buscarCi()" value="Buscar">
                             </div>
                         </div>
+
                         <div id="campos-confirmacion" style="display: none;">
+
                             <div class="mb-3" id="campos-confirmacion">
-                                <label class="form-label mt-4">Nombre Completo:</label>
+                                <label class="form-label mt-4">Nombre Completo(*):</label>
                                 <input type="text" class="form-control" id="nombres" placeholder="Introduzca su Nombre Completo" autofocus required>
                             </div>
                             <div class="mb-3" id="campos-confirmacion">
-                                <label class="form-label">Apellido Completo:</label>
+                                <label class="form-label">Apellido Completo(*):</label>
                                 <input type="text" class="form-control" id="apellidos" placeholder="Introduzca su Apellido Completo" autofocus required>
                             </div>
                             <div class="mb-3" id="campos-confirmacion">
-                                <label class="form-label">E-mail:</label>
+                                <label class="form-label">E-mail(*):</label>
                                 <input type="email" class="form-control" id="correo" placeholder="Introduzca su Correo Electrónico" autofocus required>
                             </div>
                             <div class="mb-3" id="campos-confirmacion">
-                                <label class="form-label">N° de Teléfono:</label>
+                                <label class="form-label">N° de Teléfono(*):</label>
                                 <input type="number" class="form-control" id="telefono" placeholder="Introduzca su Número de Teléfono" autofocus required>
                             </div>
 
@@ -81,16 +91,18 @@
 
 
                                 <div class="mb-3" id="campos-adicionales">
-                                    <label class="form-label">Universidad:</label>
+                                    <label class="form-label">Universidad(*):</label>
                                     <input type="text" class="form-control" id="universidad" placeholder="Introduzca su Universidad " autofocus required>
                                 </div>
 
 
 
                                 <div class="mb-3" id="campos-adicionales">
-                                    <label class="form-label">Carrera:</label>
+                                    <label class="form-label">Carrera(*):</label>
                                     <input type="text" class="form-control" id="carrera" placeholder="Introduzca su Carrera " autofocus required>
                                 </div>
+
+
 
 
                                 <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
@@ -110,7 +122,7 @@
 
                         <div id="campos-adicionales1" style="display: none;">
                             <div class="mb-3">
-                                <label class="form-label">Universidad:</label>
+                                <label class="form-label">Universidad(*):</label>
                                 <select id="cmbuniversidad" class="form-select form-control" name="txt_uni">
                                     <option value="0" selected>Seleccione su Universidad</option>
                                     <option value="1">Universidad del norte</option>
@@ -119,19 +131,37 @@
 
 
                             <div class="mb-3">
-                                <label class="form-label">Carrera:</label>
+                                <label class="form-label">Carrera(*):</label>
                                 <select class="form-select form-control" name="txt_carrera" id="cmbcarrera">
                                     <option value="0" selected>Seleccione su Carrera</option>
-                                    <option value="1">Ingenieria Informatica</option>
-                                    <option value="2">Ingenieria Comercial</option>
+                                    <option value="1">Ingeniería Informática</option>
+                                    <option value="2">Ingeniería Comercial</option>
                                     <option value="3">Ciencia Contables</option>
                                     <option value="4">Derecho</option>
                                     <option value="5">Administracion de Empresas</option>
                                     <option value="6">Medicina</option>
-                                    <option value="5">Ingenieria Electromecanica</option>
+                                    <option value="7">Ingeniería Electromecánica</option>
+                                    <option value="8">Bioquímica</option>
+                                    <option value="9">Comercio Exterior y Relaciones Internacionales</option>
+                                    <option value="10">Enfermería</option>
+                                    <option value="11">Escribanía Pública</option>
+                                    <option value="12">Fisioterapia y Kinesiologia</option>
+                                    <option value="13">Ingeniería en Telecomunicaciones</option>
+                                    <option value="14">Mercadotecnia</option>
+                                    <option value="15">Nutrición</option>
+                                    <option value="16">Odontología</option>
+                                    <option value="17">Periodismo</option>
+                                    <option value="18">Psicología</option>
+                                    <option value="19">Docente u otro</option>
+
                                 </select>
                             </div>
-
+                            <div class="alert alert-danger" role="alert" style="display: none;" id="rellenacampos">
+                                Por favor, completa todos los campos.
+                            </div>
+                            <div class="alert alert-danger" role="alert" style="display: none;" id="rellenacorreo">
+                                Asegurate de agregar el formato adecuado de un correo.
+                            </div>
                             <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
                                 <a class="btn btn-primary" onclick="registrarUsuario()">Registrar</a>
                             </div>

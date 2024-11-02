@@ -1,7 +1,8 @@
 
 function buscarCi(){
     var cedula = document.getElementById('cedula').value;
-
+    cedula = cedula.replace(/[.-]/g, '');  // Elimina puntos y guiones
+    var alerta = document.getElementById('noregistrado');
     $.ajax({
         url: '../controlador/validarlogin.php', // Cambia esto a la ruta de tu archivo PHP
         type: 'GET', // Cambia a 'POST' si lo necesitas
@@ -23,7 +24,7 @@ function buscarCi(){
             } else {
                 limpiar();
                 desbloquearCampos();
-                alert("No estas registrado, puedes regustrarte ahora.");
+                alerta.style.display = "block";
                 registrar();
             }
         },
@@ -126,20 +127,44 @@ function login() {
     var nombre = document.getElementById('nombres').value.trim();
     var apellido = document.getElementById('apellidos').value.trim();
     var cedula = document.getElementById('cedula').value.trim();
+    cedula = cedula.replace(/[.-]/g, '');  // Elimina puntos y guiones
     var telefono = document.getElementById('telefono').value.trim();
     var correo = document.getElementById('correo').value.trim();
+    var correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+    
+   
 
     var carreraSelect = document.getElementById('cmbcarrera');
     var carreraTexto = carreraSelect.options[carreraSelect.selectedIndex].text;
 
     var universidadSelect = document.getElementById('cmbuniversidad');
     var universidadTexto = universidadSelect.options[universidadSelect.selectedIndex].text;
+    var alerta = document.getElementById('rellenacampos');
+    var alertaco = document.getElementById('rellenacorreo');
+    var alertanoreg = document.getElementById('noregistrado');
+    var alertaregis = document.getElementById('registradoco');
+    if (!correo) {
+      
+    }
+
 
     // Verificar que ningún campo esté vacío
-    if (!nombre || !apellido || !cedula || !carreraTexto || !telefono || !universidadTexto) {
-        alert('Por favor, completa todos los campos.');
+    if (!nombre || !apellido || !cedula || !carreraTexto || !telefono || !universidadTexto || !correo) {
+        alertaco.style.display = "none";
+        alerta.style.display = "block";
         return; // Detener la ejecución si algún campo está vacío
     }
+
+    if (!correoValido) {
+        alerta.style.display = "none";
+        alertaco.style.display = "block";
+        return; // Detener la ejecución si algún campo está vacío
+    }
+
+
+    
+
+    
 
     console.log(nombre + " " + apellido + " " + cedula + " " + carreraTexto + " " + universidadTexto);
 
@@ -148,9 +173,18 @@ function login() {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         if (xhr.status === 200) {
-            alert(xhr.responseText);
             limpiar();
             ocultar();
+            alertanoreg.style.display = "none"
+            alerta.style.display = "none";
+            alertaco.style.display = "none";
+
+            alertaregis.style.display = "block";
+            setTimeout(function() {
+                alertaregis.style.display = "none";
+            }, 3000);  // 3000 ms = 3 segundos
+            
+
         } else {
             alert('Error en la solicitud.');
         }
