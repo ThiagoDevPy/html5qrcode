@@ -160,7 +160,7 @@
                                 Por favor, completa todos los campos.
                             </div>
                             <div class="alert alert-danger" role="alert" style="display: none;" id="rellenacorreo">
-                                Asegurate de agregar el formato adecuado de un correo.
+                                    Correo electrónico no válido..
                             </div>
                             <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
                                 <a class="btn btn-primary" onclick="registrarUsuario()">Registrar</a>
