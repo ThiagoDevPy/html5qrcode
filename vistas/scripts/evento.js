@@ -38,7 +38,7 @@ document.getElementById('guardar').addEventListener('click', function() {
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                window.location.href="index3.php";
+                window.location.href="camara.php";
             }
         };
         xhr.send('id=' + encodeURIComponent(selectedValue));

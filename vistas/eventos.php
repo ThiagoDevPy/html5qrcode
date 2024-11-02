@@ -25,6 +25,7 @@ if (!isset($_SESSION['user_id'])) {
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="../public/img/icono.ico">
     <style>
         body {
             background-color: #f8f9fa;
@@ -37,10 +38,7 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         .bg-footer {
-            background-color: #007bff;
-            /* Color azul para el footer */
-            color: white;
-            /* Color del texto en el footer */
+            background-color: #f0f0f0af;
         }
 
         .navbar {
@@ -89,7 +87,7 @@ if (!isset($_SESSION['user_id'])) {
 <header class="bg-header py-3">
     <div class="container">
         <h1 class="text-center text-white">
-            <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+            <a href="index1.php"><img src="../img/uninorte-logo.png" alt="" class="logo" /></a>
         </h1>
     </div>
 
@@ -101,7 +99,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index1.php">Inicio</a>
+                        <a class="nav-link" href="udn.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
@@ -123,8 +121,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="container mt-5 " id="eventos-container">
         <h3 class="text-center mb-4">Eventos Asistidos</h3>
         <div class="alert alert-info mt-4">
-                    <strong>Hora de Extension Total: <span class="hidden-xs" id="totalhoraexten"></span></strong> 
-                </div>
+            <strong>Hora de Extension Total: <span class="hidden-xs" id="totalhoraexten"></span></strong>
+        </div>
         <div class="d-flex flex-column align-items-center d-flex justify-content-center"> <!-- Contenedor centrado -->
             <!-- Las cards de eventos se insertarán aquí -->
         </div>

@@ -40,13 +40,7 @@ function registrarUsuario() {
 }
 
 
-
-
-
 // Llamar a la función para obtener la información del usuario
-
-
-
 
 function login() {
     // Obtener los valores del formulario

@@ -13,9 +13,6 @@ if (!isset($_SESSION['user_id'])) {
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -29,63 +26,9 @@ if (!isset($_SESSION['user_id'])) {
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            background-color: #f8f9fa;
-            /* Color de fondo del body */
-        }
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="../public/img/icono.ico">
 
-        .bg-header {
-            background-color: #007bff;
-            /* Color azul para el header */
-        }
-
-        .bg-footer {
-            background-color: #007bff;
-            /* Color azul para el footer */
-            color: white;
-            /* Color del texto en el footer */
-        }
-        .navbar {
-            padding: 0;
-             border: none;
-             margin: 0 auto; /* Centra el ul */
-             display: flex; /* Usar flexbox */
-             justify-content: center; /* C
-            /* Para mantener el botón a la izquierda */
-        }
-
-        .navbar-toggler {
-             border: none;
-             padding: 0;
-             margin: 0;
-            /* Cambia el borde a blanco */
-        }
-
-        .navbar-toggler-iconn {
-            height: 40px;
-            width: 40px;
-            /* Cambia el color del icono de hamburguesa a blanco */
-        }
-
-        .nav-link {
-            color: white;
-            /* Color del texto de los enlaces */
-        }
-
-        .nav-link:hover {
-            color: #ccc;
-            /* Color al pasar el mouse */
-        }
-
-        .logo {
-            max-width: 150px;
-            /* Ajusta el tamaño del logo */
-            height: auto;
-        }
-
-    
-    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -94,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
 <header class="bg-header py-3">
     <div class="container">
         <h1 class="text-center text-white">
-            <a href="index1.php"><img src="../img/Logos-uninorte-05-1.png" alt="" class="logo" /></a>
+            <a href="index1.php"><img src="../img/uninorte-logo.png" alt="" class="logo" /></a>
         </h1>
     </div>
 
@@ -106,7 +49,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav"> <!-- Añade mx-auto aquí -->
                     <li class="nav-item">
-                        <a class="nav-link" href="index1.php">Inicio</a>
+                        <a class="nav-link" href="udn.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
