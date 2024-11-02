@@ -102,9 +102,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="udn.php">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
                     </li>

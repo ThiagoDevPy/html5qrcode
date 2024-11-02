@@ -3,6 +3,8 @@ function buscarCi(){
     var cedula = document.getElementById('cedula').value;
     cedula = cedula.replace(/[.-]/g, '');  // Elimina puntos y guiones
     var alerta = document.getElementById('noregistrado');
+    var alertacam = document.getElementById('rellenacampos');
+    var alertaco = document.getElementById('rellenacorreo')
     $.ajax({
         url: '../controlador/validarlogin.php', // Cambia esto a la ruta de tu archivo PHP
         type: 'GET', // Cambia a 'POST' si lo necesitas
@@ -24,6 +26,8 @@ function buscarCi(){
             } else {
                 limpiar();
                 desbloquearCampos();
+                alertacam.style.display = "none";
+                alertaco.style.display = "none"; 
                 alerta.style.display = "block";
                 registrar();
             }

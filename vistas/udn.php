@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../public/img/icono.ico">
 
 </head>
@@ -34,62 +34,96 @@ if (!isset($_SESSION['user_id'])) {
 <body class="d-flex flex-column min-vh-100">
 
 
-<header class="bg-header py-3">
-    <div class="container">
-        <h1 class="text-center text-white">
-            <a href="index1.php"><img src="../img/uninorte-logo.png" alt="" class="logo" /></a>
-        </h1>
-    </div>
-
-    <nav class="navbar navbar-expand-lg bg-header">
+    <header class="bg-header py-3">
         <div class="container">
-            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav"> <!-- Añade mx-auto aquí -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="udn.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
-                    </li>
-                </ul>
-            </div>
+            <h1 class="text-center text-white">
+                <a href="index1.php"><img src="../img/uninorte-logo.png" alt="" class="logo" /></a>
+            </h1>
         </div>
-    </nav>
-</header>
 
-
-
-    
-        <main>
+        <nav class="navbar navbar-expand-lg bg-header">
             <div class="container">
-                <div>
-                    <div class="align-items-center">
-                        <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header">
-                                <h4 class="text-center font-weight-light my-4">REGISTRAR MI ASISTENCIA</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-center">
-                                <select id="mi-select" class="form-select form-select-lg" required>
-                                    <option value="">Selecciona un evento</option>
-                                </select>
-                                </div>
-                                <br>
-                                <div class="d-flex align-items-center justify-content-center">
-                                <button class="btn btn-primary" id="guardar">REGISTRAR</button>
-                                </div>
-                            </div>
+                <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-iconn"><img class="navbar-toggler-iconn" src="../img/icons8-menú-64.png" alt=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav"> <!-- Añade mx-auto aquí -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="udn.php">Inicio</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container p-3">
+            <div>
+                <div class="align-items-center">
+
+
+                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center" style="">
+                        <img src="../img/icons8-qr-100.png" class="card-img-top" style="height: 100px; width: 100px;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Asistencia QR.</h5>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Escanear Qr
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center" style="">
+                        <img src="../img/icons8-eventos-100.png" class="card-img-top" style="height: 100px; width: 100px;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Eventos Asistidos</h5>
+
+                            <a href="eventos.php" class="btn btn-primary " type="button">Ver mis Eventos</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+
+
+
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Seleciona un Eventos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <select id="mi-select" class="form-select form-select-lg" required>
+                            <option value="">Selecciona un evento</option>
+                        </select>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary" id="guardar">Seleccionar Evento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
 
     <footer class="bg-footer py-2 mt-auto">
         <div class="container text-center"> <!-- Añadido text-center para centrar el contenido -->
@@ -118,7 +152,6 @@ if (!isset($_SESSION['user_id'])) {
             </ul>
         </div>
     </footer>
- 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

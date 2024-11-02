@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 if (!isset($_SESSION['evento_id'])) {
     // Redirigir al usuario a la página de inicio de sesión si no está autenticado
-    header('Location: index1.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
+    header('Location: udn.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
     exit(); // Asegúrate de salir del script después de redirigir
 
 }
@@ -211,9 +211,7 @@ if (!isset($_SESSION['evento_id'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="udn.php">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
                         </li>
@@ -276,7 +274,6 @@ if (!isset($_SESSION['evento_id'])) {
                 </ul>
             </div>
         </footer>
-
 
 
 

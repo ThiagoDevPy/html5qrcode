@@ -66,7 +66,7 @@
                                 <input type="button" class="btn btn-primary" id="btn_ci" onclick="buscarCi()" value="Buscar">
                             </div>
                         </div>
-
+               
                         <div id="campos-confirmacion" style="display: none;">
 
                             <div class="mb-3" id="campos-confirmacion">
@@ -83,7 +83,7 @@
                             </div>
                             <div class="mb-3" id="campos-confirmacion">
                                 <label class="form-label">N° de Teléfono(*):</label>
-                                <input type="number" class="form-control" id="telefono" placeholder="Introduzca su Número de Teléfono" autofocus required>
+                                <input type="text" class="form-control" id="telefono" placeholder="Introduzca su Número de Teléfono" autofocus required>
                             </div>
 
                             <!-- Campos adicionales -->
@@ -160,7 +160,7 @@
                                 Por favor, completa todos los campos.
                             </div>
                             <div class="alert alert-danger" role="alert" style="display: none;" id="rellenacorreo">
-                                    Correo electrónico no válido..
+                                Correo electrónico no válido.
                             </div>
                             <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
                                 <a class="btn btn-primary" onclick="registrarUsuario()">Registrar</a>
