@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="card-body text-center">
                                     <p class="lead">El codigo QR que has utilizado ya ha expirado, por favor acercate en la mesa para escanear el QR actualizado.</p>
-                                    <a href="index1.php" class="btn btn-primary">Volver al Inicio</a>
+                                    <a href="udn.php" class="btn btn-primary">Volver al Inicio</a>
                                 </div>
                             </div>
                         </div>

@@ -209,7 +209,7 @@ if (!isset($_SESSION['evento_id'])) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index1.php">Inicio</a>
+                            <a class="nav-link" href="udn.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="eventos.php">Ver mis Eventos</a>
