@@ -1,7 +1,10 @@
 <?php
 ob_start();
 session_start(); // Iniciar la sesión
-
+if (isset($_SESSION['evento_id'])) {
+    unset($_SESSION['evento_id']);
+  
+}
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['user_id'])) {
     // Redirigir al usuario a la página de inicio de sesión si no está autenticado

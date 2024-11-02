@@ -1,3 +1,23 @@
+<?php
+ob_start();
+session_start(); // Iniciar la sesión
+
+
+// Borra la variable de sesión 'evento_id' si existe
+if (isset($_SESSION['evento_id'])) {
+    unset($_SESSION['evento_id']);
+}
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['user_id'])) {
+    // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+    header('Location: login.php'); // Cambia 'login.html' por el nombre de tu página de inicio de sesión
+    exit(); // Asegúrate de salir del script después de redirigir
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -137,3 +157,14 @@
                     <li class="mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                            />
+                        </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+   
+</body>
+</html>
+
+<?php
+ob_end_flush();
+?>

@@ -209,9 +209,9 @@ if (!isset($_SESSION['evento_id'])) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="udn.php">Inicio</a>
+                            <a class="nav-link" href="../controlador/borrarevento.php">Inicio</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="../controlador/logout.php">Cerrar Sesion</a>
                         </li>
@@ -324,6 +324,12 @@ if (!isset($_SESSION['evento_id'])) {
             }, config, qrCodeSuccessCallback);
 
             html5QrcodeScanner.render(qrCodeSuccessCallback, onScanFailure);
+
+
+            window.addEventListener("beforeunload", function() {
+                // Utiliza sendBeacon para enviar una solicitud a borrar_evento.php antes de que el usuario salga
+                navigator.sendBeacon("borrarevento.php");
+            });
         </script>
     </body>
 
