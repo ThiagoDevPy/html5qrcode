@@ -73,7 +73,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="align-items-center">
 
 
-                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center" style="">
+                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center text-center">
                         <img src="../img/icons8-qr-100.png" class="card-img-top" style="height: 100px; width: 100px;" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Asistencia QR.</h5>
@@ -84,9 +84,7 @@ if (!isset($_SESSION['user_id'])) {
                         </div>
                     </div>
 
-
-
-                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center" style="">
+                    <div class="card border-1 rounded-lg mt-5 p-3 align-items-center text-center">
                         <img src="../img/icons8-eventos-100.png" class="card-img-top" style="height: 100px; width: 100px;" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Eventos Asistidos</h5>
@@ -108,7 +106,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Seleciona un Eventos</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Seleciona un Evento.</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -120,7 +118,7 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
                     <div class="modal-footer">
                         <div class="d-flex align-items-center justify-content-center">
-                            <button class="btn btn-primary" id="guardar">Seleccionar Evento</button>
+                            <button class="btn btn-primary" id="guardar">Activar Camara</button>
                         </div>
                     </div>
                 </div>
