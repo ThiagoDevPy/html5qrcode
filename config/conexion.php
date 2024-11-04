@@ -1,13 +1,13 @@
 <?php
 include "database.php";
 // Configuración de la base de datos
-$host = 'junction.proxy.rlwy.net';
-$port = '50253';
-$user = 'root';
-$pass = 'JZJtzUrOZXqKbSesaMhVxSfqaxotrTXU';
+$host = 'autorack.proxy.rlwy.net';
+$port = '12006';
+$user = 'alumnos';
+$pass = 'Alumnos_Uninorte2024Ñ';
 $dbname = 'railway';
 
-
+mysql://root:VUIihnVjqOpUXZmCBzeOsOoUKPekFIEg@autorack.proxy.rlwy.net:12006/railway
 
 try {
     // Crear una instancia de la clase Database
